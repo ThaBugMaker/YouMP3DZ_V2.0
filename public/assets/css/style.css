@@ -417,9 +417,6 @@ footer {
   }
   .foo {
     font-size: 0.9rem;
-   
-    bottom: 0;
-    right: 0;
   }
 }
 @media (max-width: 668px) {
