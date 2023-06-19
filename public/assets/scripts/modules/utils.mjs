@@ -5,8 +5,7 @@ export function validateYoutubeUrlAndId(link) {
   // Check if url matches YouTube URL patterns
   const pattern1 = /^(https?:\/\/)?(www\.)?youtube\.com\/watch\?v=([^&]+)$/;
   const pattern2 = /^(https?:\/\/)?(www\.)?youtu\.be\/([^&]+)$/;
-
- // Check if the URL matches either pattern
+  // Check if the URL matches either pattern
   if (pattern1.test(link) || pattern2.test(link)) {
     // If the URL matches, extract the video ID
     const match = link.match(pattern1) || link.match(pattern2);
@@ -28,6 +27,9 @@ export function validateYoutubeUrlAndId(link) {
     };
   }
 
+  // If the URL does not match any of the patterns, return false
+  return false;
+}
 export function showSpinner() {
   // Get the video info container
   const videoInfo = document.querySelector(".video-info");
