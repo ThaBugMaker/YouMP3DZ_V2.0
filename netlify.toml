@@ -1,0 +1,8 @@
+[build]
+  command = "node app.js"
+  functions = "./functions"
+
+[[redirects]]
+  from = "/(.*)"
+  to = "/app.js"
+  status = 200
