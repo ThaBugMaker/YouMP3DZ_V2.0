@@ -1,6 +1,6 @@
 YouMP3 v2
 
-<img src="/public/assets/images/YouMP396.png" 
+<img src="/public/assets/images/YouMP396.png" >
 
 YouMP3 v2 is a powerful Node.js and Express.js web application that allows users to effortlessly download MP3 files from YouTube videos. With YouMP3, users can simply paste the YouTube video URL into the input field, and the app will generate a downloadable MP3 file.
 
