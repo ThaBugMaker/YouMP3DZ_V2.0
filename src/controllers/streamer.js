@@ -12,7 +12,7 @@ const keywordsToRemove = [
   "parole",
   "by",
   "quality",
-  "Explicit",
+  
 ];
 
 let completeFileName;
