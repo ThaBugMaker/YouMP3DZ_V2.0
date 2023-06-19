@@ -2,7 +2,7 @@
   "name": "yoump3",
   "version": "2.0.0",
   "description": "Youtube video downloader and converter express server for SPA, written in nodeJS.",
-  "type": "module",
+
   "main": "app.js",
   "engines": {
     "node": "^18.x || ^19.x"
