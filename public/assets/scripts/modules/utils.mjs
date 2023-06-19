@@ -1,4 +1,4 @@
-import { displayError } from "./error.js";
+import { displayError } from "./error.mjs";
 
 // Check if a given URL is valid for YouTube
 export function validateYoutubeUrlAndId(link) {
