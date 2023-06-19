@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="1">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %></title>
+  <link rel="shortcut icon" href="/assets/images/YouMP316.png" type="image/x-icon" sizes="16x16">
+  <link rel="shortcut icon" href="/assets/images/YouMP332.png" type="image/x-icon" sizes="32x32">
+  <link rel="shortcut icon" href="/assets/images/YouMP396.png" type="image/x-icon" sizes="96x96">
+  <link rel="shortcut icon" href="/assets/images/YouMP3120.png" type="image/x-icon" sizes="120x120">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" type='text/css' fetchpriority="auto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400&display=swap" type="text/css" fetchpriority="high">
+  <link rel="stylesheet" href="https://www.youtube-nocookie.com/s/player/8c7583ff/www-player.css" type="text/css" fetchpriority="high">
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css" fetchpriority="high">
+
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+    font-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+    frame-src 'self' 'unsafe-inline' https://www.youtube.com https://www.youtube-nocookie.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    script-src 'self' 'unsafe-inline'; 
+    img-src 'self' https://i.ytimg.com;">
+
+  <!-- Referrer Policy -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <script>
+    // Detect the user's preferred color scheme
+    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Set the `data-dark` attribute based on the detected mode
+    document.documentElement.setAttribute('data-dark', prefersDarkMode ? '1' : '0');
+  </script>
+  <script src="/assets/scripts/index.js" type="module" defer fetchpriority="high"></script>
+
+
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="/assets/images/YouMP3120.png" alt="">
+          <a href="/">YouMP<span>3</span></a>
+        </div>
+        <ul>
+          <li><a class="home" href="/">Home</a></li>
+          <li><a href="/docs">Docs</a></li>
+          <li><a href="/about">About</a></li>
+          <li>
+            <a class="" href="/github" target="_blank"><i class="fa-brands fa-github"></i>&nbsp;Github</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>

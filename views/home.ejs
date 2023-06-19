@@ -1,0 +1,42 @@
+<%- include('./partials/header'); -%>
+<!-- The above code includes the header partial into this HTML file -->
+
+<main>
+  <!-- This is a container for the form and other elements on the page -->
+  <div class="container center">
+    <form>
+      <!-- This is the form where the user inputs the Youtube URL -->
+      <label for="link">Enter Youtube URL:</label>
+
+      <!-- This is a container for the input elements on the page -->
+      <div class="inputsG">
+        <!-- This is the input field where the user enters the Youtube URL -->
+        <input type="url" name="url" id="yt-link" placeholder="Enter Your Youtube URL" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus="on" aria-autocomplete="none" required />
+        <!-- This is the submit button to initiate the conversion process -->
+        <input id="submitBtn" type="submit" value="Convert" />
+      </div>
+      <!-- Add Errors Here -->
+      <!-- This is where errors will be displayed if any occur -->
+      <div class="btn hidden">
+        <a class="downloadLink" download>Download MP3 <i class="fa-solid fa-download"></i></a>
+      </div>
+    </form>
+    <!-- This is a container for the YouTube video and its related information -->
+    <div class="video-info">
+      <div class="iframeContainer">
+        <iframe id="video-iframe" src="https://www.youtube-nocookie.com/embed/1gI_HGDgG7c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+      </div>
+      <p id="video-title">The Most Amazing Song!</p>
+    </div>
+
+  </div>
+  <!-- Floating Action Button -->
+  <div id="fab" class="fabButton">
+    <span class="label"><i class="fa-solid fa-angle-left"></i><i class="fa-solid fa-angle-left"></i></span>
+    <span class="fab-text">By using our app you agree to our Term of Use.</span>
+  </div>
+
+</main>
+
+<%- include('./partials/footer'); -%>
+<!-- The above code includes the footer partial into this HTML file -->
