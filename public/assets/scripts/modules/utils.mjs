@@ -89,13 +89,20 @@ export function updateUI(link, data) {
     displayError("Internal Server Error: 500");
     return;
   } else if (videoId) {
-    console.log(videoID);
+    
     iframe.src = `https://www.youtube-nocookie.com/embed/${videoID}`;
     title.innerText = data.originalTitle;
   } else {
     displayError("Invalid YouTube URL");
   }
 }
+export async function updateRateLimitRemaining(data) {
+  let xRateLimitRemaining = data.xRateLimitRemaining;
+  sessionStorage.setItem("xRateLimitRemaining", xRateLimitRemaining);
+  let remaining = document.querySelector("#remaining");
+  remaining.innerText = xRateLimitRemaining;
+}
+
 export function showFab() {
   document.addEventListener("DOMContentLoaded", () => {
     const fab = document.getElementById("fab");
