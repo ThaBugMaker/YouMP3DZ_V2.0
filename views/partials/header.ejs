@@ -15,16 +15,19 @@
   <link rel="stylesheet" href="https://www.youtube-nocookie.com/s/player/8c7583ff/www-player.css" type="text/css" fetchpriority="high">
   <link rel="stylesheet" href="/assets/css/style.css" type="text/css" fetchpriority="high">
 
-  <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self';
-    font-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
-    frame-src 'self' 'unsafe-inline' https://www.youtube.com https://www.youtube-nocookie.com;
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    script-src 'self' 'unsafe-inline'; 
-    img-src 'self' https://i.ytimg.com;">
+<!-- Content Security Policy -->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+  frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com;
+  style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+  script-src 'self';
+  img-src 'self' https://i.ytimg.com;
+">
 
-  <!-- Referrer Policy -->
-  <meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- Referrer Policy -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
   <script>
     // Detect the user's preferred color scheme
     const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
