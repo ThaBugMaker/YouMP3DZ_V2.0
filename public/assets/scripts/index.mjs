@@ -1,5 +1,5 @@
-import { displayError } from "./modules/error";
-import { initializeCookies } from "./modules/cookies";
+import { displayError } from "./modules/error.mjs";
+import { initializeCookies } from "./modules/cookies.mjs";
 import {
   showSpinner,
   spinner,
@@ -7,7 +7,7 @@ import {
   createDownloadButton,
   updateUI,
   showFab,
-} from "./modules/utils";
+} from "./modules/utils.mjs";
 
 const form = document.querySelector("form");
 const submitBtn = document.querySelector("#submitBtn");
