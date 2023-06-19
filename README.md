@@ -37,7 +37,7 @@
 <p>For any inquiries, feedback, or suggestions, you can reach me via:</p>
 <ul>
   <li>Email: KhalilDev@duck.com</li>
-  <li>Twitter:<a href="https://twiiter.com/ThaBugMaker" target="_blank">@ThaBugMaker</a></li>
+  <li>Twitter:<a href="https://twitter.com/ThaBugMaker" target="_blank">@ThaBugMaker</a></li>
 </ul>
 
 <p>Your satisfaction and experience with YouMP3DZ v2.0 are important to us. Don't hesitate to get in touch!</p>
