@@ -6,11 +6,12 @@ export function validateYoutubeUrlAndId(link) {
   const pattern1 = /^(https?:\/\/)?(www\.)?youtube\.com\/watch\?v=([^&]+)$/;
   const pattern2 = /^(https?:\/\/)?(www\.)?youtu\.be\/([^&]+)$/;
 
-  // Check if the URL matches either pattern
+ // Check if the URL matches either pattern
   if (pattern1.test(link) || pattern2.test(link)) {
     // If the URL matches, extract the video ID
     const match = link.match(pattern1) || link.match(pattern2);
     const videoId = match[3];
+    const videoID = videoId;
 
     // Check if the video ID is valid
     if (videoId.length !== 11) {
@@ -21,12 +22,11 @@ export function validateYoutubeUrlAndId(link) {
     }
 
     // If the video ID is valid, return true
-    return true;
+    return {
+      videoID,
+      videoId: true,
+    };
   }
-
-  // If the URL does not match any of the patterns, return false
-  return false;
-}
 
 export function showSpinner() {
   // Get the video info container
@@ -79,15 +79,19 @@ export async function createDownloadButton(data) {
 }
 
 export function updateUI(link, data) {
-  let videoID = validateYoutubeUrlAndId(link);
+  const { videoID, videoId } = validateYoutubeUrlAndId(link);
   let title = document.querySelector("#video-title");
   let iframe = document.querySelector("#video-iframe");
+
   if (!data.originalTitle) {
     displayError("Internal Server Error: 500");
     return;
-  } else {
+  } else if (videoId) {
+    console.log(videoID);
     iframe.src = `https://www.youtube-nocookie.com/embed/${videoID}`;
     title.innerText = data.originalTitle;
+  } else {
+    displayError("Invalid YouTube URL");
   }
 }
 export function showFab() {
