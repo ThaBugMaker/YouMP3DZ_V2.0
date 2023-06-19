@@ -1,5 +1,5 @@
-import { displayError } from "./modules/error.js";
-import { initializeCookies } from "./modules/cookies.js";
+import { displayError } from "./modules/error";
+import { initializeCookies } from "./modules/cookies";
 import {
   showSpinner,
   spinner,
@@ -7,15 +7,11 @@ import {
   createDownloadButton,
   updateUI,
   showFab,
-} from "./modules/utils.js";
+} from "./modules/utils";
 
 const form = document.querySelector("form");
 const submitBtn = document.querySelector("#submitBtn");
 const videoTitle = document.querySelector("#video-title");
-
-// Add an event listener for the form submit event
-// extractVideoID("https://www.youtube.com/watch?v=vHU6ZRQJ50Q");
-// extractVideoID("https://youtu.be/vHU6ZRQJ50Q");
 
 function handleForm() {
   if (!form) {
