@@ -44,7 +44,7 @@ router.get("/terms-and-privacy", (req, res) => {
 // Define a GET route for the "/github" path
 router.get("/github", (req, res) => {
   // Redirect the user to the GitHub repository for the application
-  res.redirect("https://github.com/ThaBugMaker/YouMP3.git");
+  res.redirect("https://github.com/ThaBugMaker/YouMP3DZ_V2.0.git");
 });
 
 // Define a GET route for the "/tos" path
