@@ -224,6 +224,9 @@ input[type="submit"]:disabled {
   color: var(--Light-Bg);
   text-align: center;
 }
+.html[data-dark="1"] .video-info p {
+
+  color: var( --Dark-Bg); }
 .btn {
   position: absolute;
   bottom: 0;
