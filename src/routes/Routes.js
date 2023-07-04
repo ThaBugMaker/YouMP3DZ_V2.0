@@ -50,7 +50,7 @@ router.get("/public", (req, res) => {
   });
 });
 router.get('/robots.txt', (req, res) => {
-  res.sendFile(path.join(__dirname, 'robots.txt'));
+  res.sendFile(path.join(__dirname, '../../robots.txt'));
 });
 
 
