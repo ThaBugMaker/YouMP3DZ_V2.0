@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /download/
+Disallow: /restricted-page/
+
+Allow: /public/
