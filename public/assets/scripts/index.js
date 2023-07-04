@@ -41,7 +41,10 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!storedValue) {
     remainingElement.innerText = 50;
   }
-
+  let iframe = document.querySelector("#video-iframe");
+  iframe.src = `https://www.youtube-nocookie.com/embed/1gI_HGDgG7c`;
+  let fAwsome = document.querySelector("#fawsome");
+  fAwsome.rel = "stylesheet";
   setTimeout(() => {
     // console.clear();
   }, 1500);
