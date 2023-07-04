@@ -1,22 +1,18 @@
 // Import the Express.js library and create a new router instance
 const express = require("express");
 const router = express.Router();
-const { Readable } = require("stream");
-// Import the path module for working with file paths
+
 // Import  middlewares and controllers
-const {
-  validateUrl,
-  denied,
-  handle404,
-} = require("../middlewares/errAndValidations");
-
+const limiter = require("../middlewares/rateLimiter.js");
+const { validateUrl, denied, handle404 } = require("../middlewares/validation");
 const { streamAudio, getAudioStream } = require("../controllers/streamer");
-const limiter = require("../middlewares/rateLimit.js");
 
-// Create a new route to handle POST requests to the "/download" endpoint
-router.post("/download", limiter, validateUrl, streamAudio);
+// CORE ENDPOINTS
+router.post("/download", validateUrl, limiter, streamAudio);
 router.get("/download/:filename", getAudioStream);
-/* ******** ROOT ******** */
+
+/* ******** TAMPLETS ******** */
+
 // Route handler for the root path
 router.get("/", (req, res) => {
   res.render("home", { pageTitle: "YouMP3DZ - Home" });
