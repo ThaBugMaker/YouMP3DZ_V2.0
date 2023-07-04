@@ -5,7 +5,7 @@
   <!-- This is a container for the form and other elements on the page -->
   <div class="container center">
     <p style="text-align: center; margin: 1rem auto -1rem">
-      <span id="remaining"></span> downloads remaining within the next hour.
+      <span id="remaining">50</span> downloads remaining within the next hour.
     </p>
     <form>
       <!-- This is the form where the user inputs the Youtube URL -->
@@ -14,20 +14,20 @@
       <!-- This is a container for the input elements on the page -->
       <div class="inputsG">
         <!-- This is the input field where the user enters the Youtube URL -->
-        <input type="url" name="url" id="yt-link" placeholder="Enter Your Youtube URL" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus="on" aria-autocomplete="none" required />
+        <input type="url" name="url" id="yt-link" placeholder="https://youtu.be/WILNIXZr2oc" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus="on" aria-autocomplete="none" required />
         <!-- This is the submit button to initiate the conversion process -->
         <input id="submitBtn" type="submit" value="Convert" />
       </div>
       <!-- Add Errors Here -->
       <!-- This is where errors will be displayed if any occur -->
-      <div class="btn hidden">
-        <a class="downloadLink" download>Download MP3 <i class="fa-solid fa-download"></i></a>
-      </div>
+      <button class="btn hidden">
+        Download MP3 <i class="fa-solid fa-download"></i>
+      </button>
     </form>
     <!-- This is a container for the YouTube video and its related information -->
     <div class="video-info">
       <div class="iframeContainer">
-        <iframe id="video-iframe" src="https://www.youtube-nocookie.com/embed/1gI_HGDgG7c" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; web-share"></iframe>
+        <iframe id="video-iframe" src="https://www.youtube-nocookie.com/embed/1gI_HGDgG7c" frameborder="0" allow="encrypted-media; gyroscope; picture-in-picture;"></iframe>
       </div>
       <p id="video-title">The Most Amazing Song!</p>
     </div>
@@ -38,8 +38,22 @@
     <span class="label"><i class="fa-solid fa-angle-left"></i><i class="fa-solid fa-angle-left"></i></span>
     <span class="fab-text">By using our app you agree to our Term of Use.</span>
   </div>
-
 </main>
+<footer class="homeFooter">
+  <div class="container">
+    <span class="foo">
+      <p>
+        copyright&nbsp;<i class="fa-regular fa-copyright"></i>&nbsp;<%= new Date().getFullYear() %>&nbsp;<b>YouMP3DZ</b>,&nbsp;All rights reserved.
+      </p>
+    </span>
+    <span class="foo" style="margin-top: -20px;font-size: .85rem;">
+      <p>
+        🇩🇿 Made with&nbsp;<i class="fa-solid fa-bug"></i>&nbsp;&&nbsp;<i class="fa-solid fa-mug-hot"></i>&nbsp;in Algeria 🇩🇿
+      </p>
+    </span>
+  </div>
+</footer>
+</body>
 
-<%- include('./partials/footer'); -%>
+</html>
 <!-- The above code includes the footer partial into this HTML file -->
