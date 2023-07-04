@@ -93,14 +93,14 @@ a:hover {
 .logo img {
   width: 64px;
 }
-.logo a {
+.logo h1 a {
   font-size: 1.7rem;
   display: block;
 }
-.logo span {
+.logo h1 span {
   font-size: 1.5rem;
 }
-.logo a:hover {
+.logo h1 a:hover {
   color: #fff;
 }
 
