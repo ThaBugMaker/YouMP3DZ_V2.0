@@ -1,7 +1,3 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /private/
-Disallow: /download/
-Disallow: /restricted-page/
 
-Allow: /public/
+Sitemap: https://yoump3dz.onrender.com/sitemap.xml
