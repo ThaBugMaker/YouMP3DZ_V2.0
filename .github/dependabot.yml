@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-type: "direct"
+        updates: "all"
+      - dependency-type: "indirect"
+        updates: "all"
+    ignore:
+      - package-name: "font-awesome"
+
