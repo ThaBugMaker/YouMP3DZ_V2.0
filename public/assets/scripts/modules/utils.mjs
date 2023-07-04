@@ -1,10 +1,11 @@
-import { displayError } from "./error.mjs";
+import { displayError } from "./error.js";
 
 // Check if a given URL is valid for YouTube
 export function validateYoutubeUrlAndId(link) {
   // Check if url matches YouTube URL patterns
   const pattern1 = /^(https?:\/\/)?(www\.)?youtube\.com\/watch\?v=([^&]+)$/;
   const pattern2 = /^(https?:\/\/)?(www\.)?youtu\.be\/([^&]+)$/;
+
   // Check if the URL matches either pattern
   if (pattern1.test(link) || pattern2.test(link)) {
     // If the URL matches, extract the video ID
@@ -30,6 +31,7 @@ export function validateYoutubeUrlAndId(link) {
   // If the URL does not match any of the patterns, return false
   return false;
 }
+
 export function showSpinner() {
   // Get the video info container
   const videoInfo = document.querySelector(".video-info");
@@ -42,8 +44,6 @@ export const spinner = document.createElement("div");
 
 export async function createDownloadButton(data) {
   const btn = document.querySelector(".btn");
-  let downloadLink = document.querySelector(".downloadLink");
-
   // If there is no download URL, hide the download button container
   if (!data.downloadURL) {
     console.log(data);
@@ -51,27 +51,21 @@ export async function createDownloadButton(data) {
     return;
   }
 
-  if (downloadLink) {
-    const fileName = data.fileName;
+  if (data) {
     let downloadURL = data.downloadURL;
-
     const file = await fetch(`${downloadURL}`, {
       headers: {
         "X-Post-flag": true,
       },
       responseType: "blob",
     });
-    // downloadLink.href = file.url;
-    downloadLink.addEventListener("click", () => {
-      // downloadLink.download = fileName;
-      open(file.url);
+    let fileUrl = decodeURIComponent(file.url);
+    btn.addEventListener("click", () => {
+      open(fileUrl);
       location.reload();
     });
-
-    document.body.appendChild(downloadLink);
-
     btn.classList.remove("hidden"); // Show the download button container
-    btn.appendChild(downloadLink);
+
     const form = document.querySelector("form");
     form.style.padding = "0.5em 1em 4em"; // Modify the padding
   } else {
@@ -89,7 +83,6 @@ export function updateUI(link, data) {
     displayError("Internal Server Error: 500");
     return;
   } else if (videoId) {
-    
     iframe.src = `https://www.youtube-nocookie.com/embed/${videoID}`;
     title.innerText = data.originalTitle;
   } else {
