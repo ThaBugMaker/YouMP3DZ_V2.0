@@ -28,6 +28,8 @@ app.use((req, res, next) => {
     next();
   }
 });
+// Disable the "X-Powered-By" header
+app.disable("x-powered-by");
 // Set the views directory path
 app.set("views", path.join(__dirname, "views"));
 
