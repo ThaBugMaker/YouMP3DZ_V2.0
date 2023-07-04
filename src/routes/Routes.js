@@ -49,7 +49,7 @@ router.get("/public", (req, res) => {
     pageTitle: "YouMP3DZ - Access Forbidden",
   });
 });
-app.get('/robots.txt', (req, res) => {
+router.get('/robots.txt', (req, res) => {
   res.sendFile(path.join(__dirname, 'robots.txt'));
 });
 
