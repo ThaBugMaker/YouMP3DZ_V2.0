@@ -45,9 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
   iframe.src = `https://www.youtube-nocookie.com/embed/1gI_HGDgG7c`;
   let fAwsome = document.querySelector("#fawsome");
   fAwsome.rel = "stylesheet";
-  setTimeout(() => {
-    // console.clear();
-  }, 1500);
 });
 function handleForm() {
   if (!form) {
