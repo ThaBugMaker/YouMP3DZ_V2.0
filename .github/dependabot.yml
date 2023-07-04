@@ -3,12 +3,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "daily"
-    allow:
-      - dependency-type: "direct"
-        updates: "all"
-      - dependency-type: "indirect"
-        updates: "all"
+      interval: "weekly"
     ignore:
       - package-name: "font-awesome"
 
