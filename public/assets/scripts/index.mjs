@@ -1,5 +1,5 @@
-import { displayError } from "./modules/error.mjs";
-import { initializeCookies } from "./modules/cookies.mjs";
+import { displayError } from "./modules/error.js";
+import { initializeCookies } from "./modules/cookies.js";
 import {
   showSpinner,
   spinner,
@@ -8,15 +8,32 @@ import {
   updateRateLimitRemaining,
   updateUI,
   showFab,
-} from "./modules/utils.mjs";
+} from "./modules/utils.js";
 
 const form = document.querySelector("form");
 const submitBtn = document.querySelector("#submitBtn");
 const videoTitle = document.querySelector("#video-title");
-// Store The Rate Limit in SessionStorage & update The Remaining on Reload
+
 let remainingElement = document.querySelector("#remaining");
 let storedValue = sessionStorage.getItem("xRateLimitRemaining");
+let xRateLimitRemaining;
+
+addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  return false;
+});
 document.addEventListener("DOMContentLoaded", function () {
+  // Detect the user's preferred color scheme
+  const prefersDarkMode =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  // Set the `data-dark` attribute based on the detected mode
+  document.documentElement.setAttribute(
+    "data-dark",
+    prefersDarkMode ? "1" : "0"
+  );
+  // Update Remaining Downloads Available From stored Session
   if (storedValue) {
     let parsedValue = JSON.parse(storedValue);
     remainingElement.innerText = parsedValue;
@@ -24,8 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!storedValue) {
     remainingElement.innerText = 50;
   }
-});
 
+  setTimeout(() => {
+    // console.clear();
+  }, 1500);
+});
 function handleForm() {
   if (!form) {
     return;
@@ -57,14 +77,33 @@ function handleForm() {
           },
           body: JSON.stringify({ url: link }),
         });
+        xRateLimitRemaining = response.headers.get("X-Ratelimit-Remaining");
+
+        console.log(JSON.stringify(response.headers));
+
+        // Retrieve the custom data from the response headers
+        let res = await response.json();
+        const customData = JSON.parse(response.headers.get("Custom-Data"));
+
+        const decodedTitle = decodeURIComponent(customData.originalTitle);
+        const decodedFileUrl = decodeURIComponent(res.url);
+        // Store the data
+        const data = {
+          originalTitle: decodedTitle,
+          fileName: customData.fileName,
+          downloadURL: decodedFileUrl,
+          xRateLimitRemaining,
+        };
+
+        // Call the function to update the rate limit remaining value
+        updateRateLimitRemaining(data);
+        // Update the UI with the response data
+        createDownloadButton(data);
+        updateUI(link, data);
+
         if (response.status === 410) {
           let body = await response.json();
           const error = body.message;
-          displayError(error);
-          return;
-        }
-        if (response.status === 429) {
-          const error = "Download limit exceeded. Please try again later.";
           displayError(error);
           return;
         }
@@ -74,27 +113,16 @@ function handleForm() {
           displayError(error);
           return;
         }
-        // Retrieve the custom data from the response headers
-        let xRateLimitRemaining = response.headers.get("X-Ratelimit-Remaining");
-
-        const customData = JSON.parse(response.headers.get("Custom-Data"));
-        const originalTitle = customData.originalTitle;
-        const fileName = customData.fileName;
-        let res = await response.json();
-        let fileURL = res.url;
-        // Store the data
-        const data = { originalTitle, fileName, downloadURL: fileURL, xRateLimitRemaining ,};
-          // Call the function to update the rate limit remaining value
-          updateRateLimitRemaining(data);
-        // Update the UI with the response data
-        createDownloadButton(data);
-        updateUI(link, data);
+        if (response.status === 429) {
+          displayError("Download limit exceeded. Please try again later.");
+          return;
+        }
       } catch (err) {
         console.error(err);
         displayError(err);
       } finally {
         // Enable the submit button
-        submitBtn.disabled = false;
+        // submitBtn.disabled = false;
         // Hide the spinner
         spinner.style.display = "none";
       }
