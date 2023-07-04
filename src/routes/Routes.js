@@ -1,7 +1,7 @@
 // Import the Express.js library and create a new router instance
 const express = require("express");
 const router = express.Router();
-
+const path = require('path');
 // Import  middlewares and controllers
 const limiter = require("../middlewares/rateLimiter.js");
 const { validateUrl, denied, handle404 } = require("../middlewares/validation");
@@ -49,6 +49,10 @@ router.get("/public", (req, res) => {
     pageTitle: "YouMP3DZ - Access Forbidden",
   });
 });
+app.get('/robots.txt', (req, res) => {
+  res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
 
 // Use the handle404 middleware to handle all 404 errors
 router.use(handle404);
