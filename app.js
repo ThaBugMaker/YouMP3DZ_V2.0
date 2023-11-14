@@ -32,6 +32,7 @@ app.use((req, res, next) => {
 app.disable("x-powered-by");
 // Set the views directory path
 app.set("views", path.join(__dirname, "views"));
+app.set('trust proxy', true);
 
 // Set the view engine to use EJS
 app.set("view engine", "ejs");
