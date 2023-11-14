@@ -3,31 +3,22 @@ import { displayError } from "./error.js";
 // Check if a given URL is valid for YouTube
 export function validateYoutubeUrlAndId(link) {
   // Check if url matches YouTube URL patterns
-  const pattern1 = /^(https?:\/\/)?(www\.)?youtube\.com\/watch\?v=([^&]+)$/;
-  const pattern2 = /^(https?:\/\/)?(www\.)?youtu\.be\/([^&]+)$/;
+  const pattern1 = /^(https?:\/\/)?(www\.)?youtube\.com\/watch\?v=([^&]+).*$/;
+  const pattern2 = /^(https?:\/\/)?(www\.)?youtu\.be\/([^&]+).*$/;
 
   // Check if the URL matches either pattern
   if (pattern1.test(link) || pattern2.test(link)) {
     // If the URL matches, extract the video ID
     const match = link.match(pattern1) || link.match(pattern2);
-    const videoId = match[3];
-    const videoID = videoId;
+    const urlPath = match[3];
+    const pathPart = urlPath.split("?");
+    const videoID = pathPart[0];
 
-    // Check if the video ID is valid
-    if (videoId.length !== 11) {
-      // If the video ID is not valid, display an error message
-      displayError("The video ID is not valid.");
-      // Return false to indicate that the URL is not valid
-      return false;
-    }
-
-    // If the video ID is valid, return true
+    // console.log(videoID);
     return {
       videoID,
-      videoId: true,
     };
   }
-
   // If the URL does not match any of the patterns, return false
   return false;
 }
@@ -75,18 +66,17 @@ export async function createDownloadButton(data) {
 }
 
 export function updateUI(link, data) {
-  const { videoID, videoId } = validateYoutubeUrlAndId(link);
+  const { videoID } = validateYoutubeUrlAndId(link);
   let title = document.querySelector("#video-title");
   let iframe = document.querySelector("#video-iframe");
 
   if (!data.originalTitle) {
-    displayError("Internal Server Error: 500");
-    return;
-  } else if (videoId) {
+    return displayError("Internal Server Error. Please try again later.");
+  } else if (videoID) {
     iframe.src = `https://www.youtube-nocookie.com/embed/${videoID}`;
     title.innerText = data.originalTitle;
   } else {
-    displayError("Invalid YouTube URL");
+    return displayError("Invalid YouTube URL");
   }
 }
 export async function updateRateLimitRemaining(data) {
