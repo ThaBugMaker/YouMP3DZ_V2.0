@@ -12,7 +12,6 @@ import {
 
 const form = document.querySelector("form");
 const submitBtn = document.querySelector("#submitBtn");
-const videoTitle = document.querySelector("#video-title");
 
 let remainingElement = document.querySelector("#remaining");
 let storedValue = sessionStorage.getItem("xRateLimitRemaining");
@@ -34,12 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
     prefersDarkMode ? "1" : "0"
   );
   // Update Remaining Downloads Available From stored Session
-  if (storedValue) {
-    let parsedValue = JSON.parse(storedValue);
-    remainingElement.innerText = parsedValue;
-  }
   if (!storedValue) {
     remainingElement.innerText = 50;
+  } else {
+    let parsedValue = JSON.parse(storedValue);
+    remainingElement.innerText = parsedValue;
   }
   let iframe = document.querySelector("#video-iframe");
   iframe.src = `https://www.youtube-nocookie.com/embed/1gI_HGDgG7c`;
@@ -82,7 +80,7 @@ function handleForm() {
         });
         xRateLimitRemaining = response.headers.get("X-Ratelimit-Remaining");
 
-        console.log(JSON.stringify(response.headers));
+        // console.log(JSON.stringify(response.headers));
 
         // Retrieve the custom data from the response headers
         let res = await response.json();
