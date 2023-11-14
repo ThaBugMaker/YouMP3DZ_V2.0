@@ -45,7 +45,9 @@ router.get("/github", (req, res) => {
 
 // Define a GET route for the "/tos" path
 router.get("/public", (req, res) => {
-  const clientIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+   const xForwardedFor = req.headers['x-forwarded-for'];
+  // Extract the client's IP address from the list (first IP)
+  const clientIp = xForwardedFor ? xForwardedFor.split(',')[0].trim() : req.connection.remoteAddress;
   res.status(403).render("denied", {
     pageTitle: "YouMP3DZ - Access Forbidden",
     clientIp // Add the IP address to the rendered data
