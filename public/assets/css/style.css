@@ -458,6 +458,9 @@ footer {
     max-width: 420px;
     padding: 0 1.2rem;
   }
+  nav ul {
+  gap: 4px;
+}
 }
 
 /* For iPhones  */
