@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "functions": {
+    "api": {
+      "src": "app.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}
