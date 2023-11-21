@@ -31,7 +31,7 @@
 <p>Although no other developers are currently involved in the project, you are always welcome to report any bugs or issues you encounter. Feel free to reach out for support or assistance. Your feedback is valuable and helps improve the application's quality.</p>
 
 <h2>License</h2>
-<p>YouMP3DZ v2.0 is licensed under the GNU Affero General Public License (AGPL). This license ensures that the software remains free and open for the community. It grants users the freedom to use, modify, and distribute the software, but requires that any modifications or derivative works are made available under the same license terms. For more details about the license, please refer to the <a href="www.gnu.org/licenses/" target="_blank">online documentation</a>.</p>
+<p>YouMP3DZ v2.0 is licensed under the GNU Affero General Public License (AGPL). This license ensures that the software remains free and open for the community. It grants users the freedom to use, modify, and distribute the software, but requires that any modifications or derivative works are made available under the same license terms. For more details about the license, please refer to the <a href="https://www.gnu.org/licenses/" target="_blank">online documentation</a>.</p>
 
 <h2>Contact</h2>
 <p>For any inquiries, feedback, or suggestions, you can reach me via:</p>
