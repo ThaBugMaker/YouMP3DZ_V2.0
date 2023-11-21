@@ -87,6 +87,14 @@ a {
 a:hover {
   color: var(--Secondary-color);
 }
+.github img{
+  width: 38px;
+  transform : rotate(32deg);
+  transition:  filter 250ms ease-in;
+}
+.github:hover img{
+  filter: invert(0.65) sepia(1.5) saturate(2) hue-rotate(30deg) brightness(2);
+}
 .logo {
   display: flex;
   align-items: center;
@@ -458,6 +466,12 @@ footer {
   .video-info iframe {
     max-width: 230px;
     height: 170px;
+  }
+  .github img{
+    width: 28px;
+  }
+  .github span{
+    display: none;
   }
   .btn a,
   a {
