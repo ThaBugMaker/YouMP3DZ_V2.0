@@ -454,6 +454,13 @@ footer {
   }
 }
 @media (max-width: 668px) {
+.logo h1 a {
+  font-size: 1.2rem;
+  display: block;
+}
+.logo h1 span {
+  font-size: .8rem;
+}
   .container {
     max-width: 420px;
     padding: 0 1.2rem;
