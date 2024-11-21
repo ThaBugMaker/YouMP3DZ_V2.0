@@ -88,12 +88,10 @@ function handleForm() {
 
         const decodedTitle = decodeURIComponent(customData.originalTitle);
         const decodedFileUrl = decodeURIComponent(res.url);
-     
         // Store the data
         const data = {
           originalTitle: decodedTitle,
-          // fileName: customData.fileName,
-          fileName: decodedFileName,
+          fileName: customData.fileName,
           downloadURL: decodedFileUrl,
           xRateLimitRemaining,
         };
