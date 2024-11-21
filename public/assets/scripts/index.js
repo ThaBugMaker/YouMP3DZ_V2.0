@@ -85,17 +85,18 @@ function handleForm() {
         // Retrieve the custom data from the response headers
         let res = await response.json();
         const customData = JSON.parse(response.headers.get("Custom-Data"));
-
         const decodedTitle = decodeURIComponent(customData.originalTitle);
         const decodedFileUrl = decodeURIComponent(res.url);
+        const decodedFileName = decodeURIComponent(customData.fileName);
+
         // Store the data
         const data = {
           originalTitle: decodedTitle,
-          fileName: customData.fileName,
+          fileName: decodedFileName,
           downloadURL: decodedFileUrl,
           xRateLimitRemaining,
         };
-
+        
         // Call the function to update the rate limit remaining value
         updateRateLimitRemaining(data);
         // Update the UI with the response data
