@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --Primary-color: #ff4242;
+  --Secondary-color: hsl(51, 100%, 74%);
+  --Light-color: hsl(0, 0%, 94%);
+  --Dark-color: hsl(0, 0%, 7%);
+  --warrning: hsl(12, 100%, 74%);
+  --Light-Bg: hsl(169, 51%, 85%);
+  --Dark-Bg: hsl(0, 0%, 19%);
+  --Light-Bg-Lighter: hsl(169, 21%, 69%);
+  --Dark-Bg-Lighter: hsl(0, 1%, 15%);
+}
+html {
+  @apply scroll-smooth;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+img {
+  width: 50%;
+  height: auto;
+}
+body {
+  font-family: "montserrat", sans-serif;
+  position: relative;
+  background-color: var(--Light-Bg);
+  color: var(--Dark-color);
+  min-height: 100%;
+  @apply selection:text-dark selection:bg-secondary relative overflow-x-hidden h-screen transition-all;
+}
+
+.dark body {
+  background-color: var(--Dark-Bg);
+  color: var(--Light-color);
+}
+nav {
+  color: var(--Light-color);
+  @apply font-semibold;
+}
+section {
+  @apply container mx-auto px-8 py-4 pb-20;
+}
+
+footer {
+  display: block;
+  background-color: var(--Primary-color);
+  color: var(--Light-color);
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+/* Custom Styles */
+li .router-link-active {
+  @apply text-secondary font-semibold underline underline-offset-4;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: var(--Light-Bg);
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  padding: 5px;
+  justify-content: space-between;
+  transition: transform 0.2s linear;
+}
+.dark .checkbox-label {
+  background-color: var(--Dark-Bg);
+}
+.fa-moon {
+  color: var(--Light-color);
+}
+
+.fa-sun {
+  color: var(--Dark-color);
+}
+
+.checkbox-label .ball {
+  background-color: var(--Dark-Bg);
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+  transform: translateX(0px);
+}
+.dark .checkbox-label .ball {
+  background-color: var(--Light-color);
+}
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px) !important;
+}
