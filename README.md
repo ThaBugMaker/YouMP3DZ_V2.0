@@ -17,7 +17,7 @@
 
 Follow these steps to convert YouTube videos to MP3 files using YouMP3DZ v3.0:
 
-1. Visit the [YouMP3DZ v3.0 web application] .
+1. Visit the [YouMP3DZ v3.0 web application].
 2. Locate the input field on the homepage.
 3. Copy the URL of the YouTube video you wish to convert.
 4. Paste the URL into the input field.
