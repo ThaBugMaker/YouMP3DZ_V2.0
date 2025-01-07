@@ -1,39 +1,47 @@
-<h1>YouMP3DZ v2.0</h1>
-<br>
-<a href="https://yoump3dz.onrender.com/" target="_blank"><img src="/public/assets/images/YouMP396.png"></a>
+# YouMP3DZ v3.0
 
-<h2>About</h2>
+<img src="/public/assets/images/YouMP396.png" alt="YouMP3DZ Logo">
 
-<p>YouMP3DZ v3.0 is a fast, sleek, and user-friendly web application that allows you to easily download MP3 files from YouTube videos. Now upgraded with Vue for a smoother and more dynamic experience, simply paste the YouTube video URL, and YouMP3DZ v3.0 will instantly generate a high-quality MP3 file for you to download. Enjoy a modernized interface and faster performance with this enhanced version!</p>
+## About
 
-<h2>Features</h2>
-<ul>
-  <li>Easy MP3 Downloads: Convert YouTube videos to MP3 files with a simple copy-paste action.</li>
-  <li>Fast and Reliable: Enjoy high-speed and reliable downloads without compromising audio quality.</li>
-  <li>User-friendly Interface: Intuitive and responsive user interface for a seamless experience.</li>
-  <li>Private and Secure: Your YouTube video URLs are processed securely, and we respect your privacy.</li>
-</ul>
+**YouMP3DZ v3.0** is a sleek, fast, and user-friendly web application designed for seamless YouTube to MP3 conversions. With the latest upgrade to Vue 3, the app now offers a more dynamic and responsive experience. Simply paste the URL of a YouTube video, and YouMP3DZ will quickly generate a high-quality MP3 file for you to download. The improved performance and refreshed interface make it a pleasure to use!
 
-<h2>Usage</h2>
-<p>To download MP3 files using YouMP3DZ v3.0, follow these steps:</p>
-<ol>
-  <li>Visit the <a href="https://yoump3dz.onrender.com/" target="_blank">YouMP3DZ v3.0 web application</a>.</li>
-  <li>Locate the input field on the homepage.</li>
-  <li>Copy the URL of the YouTube video you want to convert.</li>
-  <li>Paste the URL into the input field.</li>
-  <li>Click the "Convert" button.</li>
-  <li>Wait for the conversion process to complete.</li>
-  <li>Once the MP3 file is ready, a "Download" button will appear.</li>
-  <li>Click the "Download" button to save the MP3 file to your device.</li>
-</ol>
+## Features
 
-<h2>Contributing</h2>
-<p>Although no other developers are currently involved in the project, you are always welcome to report any bugs or issues you encounter. Feel free to reach out for support or assistance. Your feedback is valuable and helps improve the application's quality.</p>
+- **Fast MP3 Downloads**: Convert YouTube videos to MP3 files effortlessly.
+- **Reliable Performance**: High-speed downloads with no compromise on audio quality.
+- **Modern Interface**: Built with Vue 3, featuring a responsive and intuitive design.
+- **Privacy-focused**: Ensures secure processing of YouTube video URLs while respecting your privacy.
 
-<h2>License</h2>
-<p>YouMP3DZ v3.0 is licensed under the GNU Affero General Public License (AGPL). This license ensures that the software remains free and open for the community. It grants users the freedom to use, modify, and distribute the software, but requires that any modifications or derivative works are made available under the same license terms. For more details about the license, please refer to the <a href="https://www.gnu.org/licenses/" target="_blank">online documentation</a>.</p>
+## Usage
 
+Follow these steps to convert YouTube videos to MP3 files using YouMP3DZ v3.0:
 
-<p>Your satisfaction and experience with YouMP3DZ v3.0 are important to us. Don't hesitate to get in touch!</p>
+1. Visit the [YouMP3DZ v3.0 web application] .
+2. Locate the input field on the homepage.
+3. Copy the URL of the YouTube video you wish to convert.
+4. Paste the URL into the input field.
+5. Click the **"Convert"** button.
+6. Wait for the conversion process to complete.
+7. Once ready, a **"Download"** button will appear.
+8. Click the **"Download"** button to save the MP3 file to your device.
 
-<p>Enjoy using YouMP3DZ v3.0 and happy downloading!</p>
+## Development
+
+The app has been rebuilt from the ground up in **Vue 3**, transitioning from an EJS-based structure. Major improvements include:
+- Vue 3 components for a modular and scalable codebase.
+- A refreshed file structure for better maintainability.
+- Enhanced user experience with faster loading and smoother interactions.
+
+## Contributing
+
+Currently, no other developers are actively contributing to YouMP3DZ. However, feedback and bug reports are always appreciated. Feel free to submit issues or suggestions via the repository's issue tracker. Your input helps make YouMP3DZ better for everyone!
+
+## License
+
+YouMP3DZ v3.0 is licensed under the [GNU Affero General Public License (AGPL)](https://www.gnu.org/licenses/).  
+This ensures the software remains open-source, granting you the right to use, modify, and distribute it. Any modifications or derivative works must also be licensed under AGPL.
+
+---
+
+Enjoy using **YouMP3DZ v3.0**, and happy downloading! 🎵
