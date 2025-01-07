@@ -1,5 +1,5 @@
 // utils.ts
-export function extractYouTubeVideoID(link: string) {
+export function extractYouTubeVideoID(link: string): string {
   // Check if URL matches YouTube URL patterns
   const pattern1 = /^(https?:\/\/)?(www\.)?youtube\.com\/watch\?v=([^&]+).*$/;
   const pattern2 = /^(https?:\/\/)?(www\.)?youtu\.be\/([^&]+).*$/;
@@ -12,30 +12,25 @@ export function extractYouTubeVideoID(link: string) {
     const match =
       link.match(pattern1) || link.match(pattern2) || link.match(pattern3);
     // If match is null, return false
-    if (!match) {
-      return false;
-    }
-    // Extract the video ID based on the matched pattern
-    const urlPath = match[3];
-    const mobileUrlPath = match[4];
-    const pathPart = urlPath.split("?");
-    let videoID;
+    if (match) {
+      // Extract the video ID based on the matched pattern
+      const urlPath = match[3];
+      const mobileUrlPath = match[4];
+      const pathPart = urlPath.split("?");
+      let videoID: string;
 
-    // Check if it's a standard YouTube URL or has a mobile subdomain
-    if (!mobileUrlPath) {
-      // If standard URL, extract video ID from the path
-      videoID = pathPart[0];
-    } else {
-      // If mobile URL, extract video ID directly
-      videoID = mobileUrlPath;
-    }
+      // Check if it's a standard YouTube URL or has a mobile subdomain
+      if (!mobileUrlPath) {
+        // If standard URL, extract video ID from the path
+        videoID = pathPart[0];
+      } else {
+        // If mobile URL, extract video ID directly
+        videoID = mobileUrlPath;
+      }
 
-    // Return the extracted video ID
-    return {
-      videoID,
-    };
+      // Return the extracted video ID
+      return videoID;
+    }
   }
-
-  // If the URL does not match any of the patterns, return false
-  return false;
+  return "Invalid YouTube URL";
 }
